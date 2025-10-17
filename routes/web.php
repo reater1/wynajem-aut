@@ -1,18 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ThemeController;
+Route::get('/', [SiteController::class, 'home'])->name('home');
+Route::get('/uslugi', [SiteController::class, 'services'])->name('services');
+Route::get('/flota', [SiteController::class, 'fleet'])->name('fleet');
+Route::get('/cennik', [SiteController::class, 'pricing'])->name('pricing');
+Route::get('/faq', [SiteController::class, 'faq'])->name('faq');
+Route::get('/kontakt', [SiteController::class, 'contact'])->name('contact');
+Route::get('/rezerwacja', [BookingController::class, 'form'])->name('booking.form');
+Route::post('/rezerwacja', [BookingController::class, 'send'])->middleware('throttle:5,1')->name('booking.send');
+Route::post('/theme/toggle', [ThemeController::class, 'toggle'])->name('theme.toggle');
