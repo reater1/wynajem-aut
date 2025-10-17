@@ -1,0 +1,11 @@
+currency: "PLN"
+base_fee: 20
+per_km: 3.2
+night_multiplier: 1.2
+extras:
+  child_seat: 15
+  large_luggage: 10
+  vip_vehicle: 50
+notes:
+  - "Ceny orientacyjne — dokładna wycena przy rezerwacji."
+  - "Taryfa nocna 22:00–06:00."

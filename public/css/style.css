@@ -1,0 +1,5 @@
+:root{--brand:#0d6efd}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-brand:hover{filter:brightness(.95);color:#fff}
+.hero{background:linear-gradient(135deg,rgba(13,110,253,.08),rgba(25,135,84,.08));border-radius:1rem}
+.card img{object-fit:cover;height:180px}
